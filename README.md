@@ -114,6 +114,28 @@ This mode uses a more realistic, physics-inspired model based on the system Hami
 
 ---
 
+## Algorithm Summary
+
+We use a gradient-free, online optimization algorithm to stabilize the system:
+
+1. Apply drift by perturbing control parameters  
+2. Propose a new parameter set  
+3. Compute performance metrics:
+   - TX (lifetime)
+   - TZ (lifetime)
+   - η (bias ratio)  
+4. Compute reward:
+   R = 0.7(TX + TZ) - 0.3|η - η_target|  
+5. Convert to loss:
+   L = -R  
+6. Update rule:
+   - Greedy: accept only improvements  
+   - Exploratory: occasionally accept worse steps  
+
+This allows the system to adapt in real time under hardware drift.
+
+---
+
 ## What This Demonstrates
 This project shows that:
 
