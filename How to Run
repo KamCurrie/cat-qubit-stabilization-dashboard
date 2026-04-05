@@ -1,1 +1,31 @@
+# 🚀 How to Run
 
+## 1. Clone the Repository
+```bash
+  git clone https://github.com/your-username/cat-qubit-stabilization-dashboard.git
+  cd cat-qubit-stabilization-dashboard 
+
+## 2. Install Dependencies 
+```bash
+  pip install -r requirements.txt
+
+## 3. Install Streamlit (if needed)
+```bash
+  pip install streamlit
+
+## 4. Install ngrok
+Download ngrok: 
+https://ngrok.com/download 
+Then authenticate your account
+```bash
+  ("ngrok config add-authtoken YOUR_TOKEN_HERE")
+
+## 5. Run Application
+```bash
+  streamlit run app.py
+
+## 6. (Optional) Share via ngrok
+```bash
+  ngrok http 8501
+- This will generate a public URL for sharing your dashboard
+  
